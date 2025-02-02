@@ -203,3 +203,21 @@ footer {
     margin-top: 2rem;
     backdrop-filter: blur(10px);
 }
+
+@media (max-width: 768px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1rem; /* Smaller font size for phones */
+    }
+
+    .project-item {
+    width: 100%; /* Full width for project items on phones */
+    margin: 1rem 0; /* Adjust margin for better spacing */
+    }
+
+    form input, form textarea {
+    width: 80%; /* Wider input fields for better usability on phones */
+    }
+}
