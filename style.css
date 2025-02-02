@@ -32,7 +32,7 @@ header {
     backdrop-filter: blur(10px); /* Adds a blur effect */
 }
 
-ul {
+ul, .hero ul {
     list-style: none;
     padding: 0;
 }
@@ -42,14 +42,14 @@ header nav ul li {
     margin: 0 10px;
 }
 
-a {
+a, .hero ul a {
     color: var(--accent-aqua);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-a:hover {
+a:hover, .hero ul a:hover {
     color: var(--accent-pink);
 }
 
@@ -93,12 +93,11 @@ a:hover {
         #00b7ff,
         #ff00a8,
         #00b7ff
-    ); /* Aqua to Pink to Aqua */
-    -webkit-background-clip: text; /* Clip the background to the text */
-    -webkit-text-fill-color: transparent; /* Make the text transparent */
-    background-clip: text; /* Standard property for modern browsers */
-    text-fill-color: transparent; /* Standard property for modern browsers */
-    animation: gradientShift 5s infinite alternate; /* Optional: Add animation */
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 5s infinite alternate;
 }
 
 @keyframes gradientShift {
