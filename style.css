@@ -7,14 +7,14 @@
     --accent-pink: #ff00a8; /* Hot Pink */
     --card-background: rgba(0, 0, 0, 0.5);
     --shadow-color: rgba(0, 255, 204, 0.2);
-  }
+}
 
-  html {
+html {
     background: #000d1a; /* Match the gradient background */
-  }
-  
-  /* General Styles */
-  body {
+}
+
+/* General Styles */
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -22,77 +22,114 @@
     background: var(--background-gradient);
     color: var(--text-light);
     min-height: 100vh; /* Ensure the body covers the full viewport height */
-  overflow-y: scroll; /* Ensure the scrollbar is always visible */
-  }
-  
-  header {
+    overflow-y: scroll; /* Ensure the scrollbar is always visible */
+}
+
+header {
     background: var(--card-background);
     padding: 1rem 0;
     text-align: center;
     backdrop-filter: blur(10px); /* Adds a blur effect */
-  }
-  
-  header nav ul {
+}
+
+ul {
     list-style: none;
     padding: 0;
-  }
-  
-  header nav ul li {
+}
+
+header nav ul li {
     display: inline;
     margin: 0 10px;
-  }
-  
-  header nav ul li a {
+}
+
+a {
     color: var(--accent-aqua);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-  }
-  
-  header nav ul li a:hover {
+}
+
+a:hover {
     color: var(--accent-pink);
-  }
-  
-  .hero, .about, .projects, .contact {
-    padding: 4rem 2rem;
+}
+
+.hero {
+    padding: 1rem 2rem 2rem 2rem !important;
+}
+
+.hero,
+.about,
+.projects,
+.contact,
+.socials {
+    padding: 2rem 2rem;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  .hero h1 {
+}
+
+/* .hero h1 {
     color: var(--accent-aqua);
     font-size: 3rem;
     margin-bottom: 1rem;
-  }
-  
-  .hero p {
+  } */
+
+.hero h1 {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(
+        90deg,
+        #ff00a8,
+        #00b7ff,
+        #ff00a8,
+        #00b7ff
+    ); /* Aqua to Pink to Aqua */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text transparent */
+    background-clip: text; /* Standard property for modern browsers */
+    text-fill-color: transparent; /* Standard property for modern browsers */
+    animation: gradientShift 5s infinite alternate; /* Optional: Add animation */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.hero p {
     font-size: 1.2rem;
-  }
-  
-  .about h2, .projects h2, .contact h2 {
+}
+
+.about h2,
+.projects h2,
+.contact h2,
+.socials h2 {
     color: var(--accent-aqua);
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-  }
-  
-  .project-list {
+}
+
+.project-list {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-  }
-  
-  .project-item {
+}
+
+.project-item {
     background: var(--card-background);
     padding: 1.5rem;
     margin: 1rem;
@@ -100,35 +137,36 @@
     box-shadow: 0 0 15px var(--shadow-color);
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .project-item:hover {
+}
+
+.project-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 25px var(--accent-pink);
-  }
-  
-  .project-item h3 {
+}
+
+.project-item h3 {
     color: var(--accent-aqua);
     font-size: 1.5rem;
     margin-bottom: 1rem;
-  }
-  
-  .project-item p {
+}
+
+.project-item p {
     color: var(--text-light);
-  }
-  
-  form {
+}
+
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  form label {
+}
+
+form label {
     margin: 0.5rem 0 0.2rem;
     color: var(--accent-aqua);
-  }
-  
-  form input, form textarea {
+}
+
+form input,
+form textarea {
     width: 50%;
     padding: 0.5rem;
     margin-bottom: 1rem;
@@ -136,13 +174,14 @@
     border: 1px solid var(--accent-aqua);
     color: var(--text-light);
     border-radius: 4px;
-  }
-  
-  form input::placeholder, form textarea::placeholder {
+}
+
+form input::placeholder,
+form textarea::placeholder {
     color: #888;
-  }
-  
-  form button {
+}
+
+form button {
     padding: 0.5rem 2rem;
     background: var(--accent-aqua);
     color: var(--background-dark);
@@ -151,17 +190,17 @@
     font-weight: bold;
     border-radius: 4px;
     transition: background 0.3s ease;
-  }
-  
-  form button:hover {
+}
+
+form button:hover {
     background: var(--accent-pink);
-  }
-  
-  footer {
+}
+
+footer {
     background: var(--card-background);
     color: var(--text-light);
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
     backdrop-filter: blur(10px);
-  }
+}
