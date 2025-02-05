@@ -31,7 +31,8 @@ header {
     backdrop-filter: blur(10px);
 }
 
-ul, .hero ul {
+ul,
+.hero ul {
     list-style: none;
     padding: 0;
 }
@@ -41,19 +42,18 @@ header nav ul li {
     margin: 0 10px;
 }
 
-a, .hero ul a {
+a,
+.hero ul a {
     color: var(--accent-aqua);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-family: "Patrick Hand";
 }
 
-a:hover, .hero ul a:hover {
+a:hover,
+.hero ul a:hover {
     color: var(--accent-pink);
-}
-
-.hero {
-    padding: 1rem 2rem 2rem 2rem !important;
 }
 
 .hero,
@@ -78,15 +78,11 @@ a:hover, .hero ul a:hover {
 }
 
 .hero h1 {
-    font-size: 6rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(
-        90deg,
-        #ff00a8,
-        #00b7ff,
-        #ff00a8,
-        #00b7ff
-    );
+    font-size: 7rem;
+    line-height: 7rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    background: linear-gradient(90deg, #ff00a8, #00b7ff, #ff00a8, #00b7ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -113,6 +109,11 @@ a:hover, .hero ul a:hover {
     color: var(--accent-aqua);
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
+    font-family: "Patrick Hand";
+}
+
+.about p {
+    font-family: "Patrick Hand";
 }
 
 .project-list {
@@ -200,18 +201,43 @@ footer {
 
 @media (max-width: 768px) {
     .hero h1 {
-      font-size: 3rem;
+        font-size: 5rem;
+        line-height: 5rem;
     }
     .hero p {
         font-size: 1rem;
     }
 
     .project-item {
-    width: 100%;
-    margin: 1rem 0;
+        width: 100%;
+        margin: 1rem 0;
     }
 
-    form input, form textarea {
-    width: 80%;
+    form input,
+    form textarea {
+        width: 80%;
     }
+}
+
+/* FONTS */
+.londrina-sketch-regular {
+    font-family: "Londrina Sketch", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.amatic-sc-regular {
+    font-family: "Amatic SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.amatic-sc-bold {
+    font-family: "Amatic SC", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.patrick-hand-regular {
+    font-family: "Patrick Hand", serif;
+    font-weight: 400;
+    font-style: normal;
 }
