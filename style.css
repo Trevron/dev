@@ -48,7 +48,7 @@ a,
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    font-family: "Patrick Hand";
+    font-family: "Smooch Sans";
 }
 
 a:hover,
@@ -109,11 +109,12 @@ a:hover,
     color: var(--accent-aqua);
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    font-family: "Patrick Hand";
+    font-family: "Smooch Sans";
 }
 
 .about p {
-    font-family: "Patrick Hand";
+    font-family: "Smooch Sans";
+    font-weight: 500;
 }
 
 .project-list {
@@ -241,3 +242,9 @@ footer {
     font-weight: 400;
     font-style: normal;
 }
+.smooch-sans-regular {
+    font-family: "Smooch Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
