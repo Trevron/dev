@@ -49,6 +49,7 @@ a,
     font-weight: bold;
     transition: color 0.3s ease;
     font-family: "Smooch Sans";
+    font-size: 1.25rem;
 }
 
 a:hover,
@@ -99,7 +100,7 @@ a:hover,
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .about h2,
@@ -112,9 +113,11 @@ a:hover,
     font-family: "Smooch Sans";
 }
 
-.about p {
+p {
     font-family: "Smooch Sans";
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin: 0;
 }
 
 .project-list {
@@ -209,6 +212,16 @@ footer {
         font-size: 1rem;
     }
 
+    a,
+    .hero ul a {
+        font-weight: bold;
+        font-size: 1.125rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+
     .project-item {
         width: 100%;
         margin: 1rem 0;
@@ -247,4 +260,4 @@ footer {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-  }
+}
