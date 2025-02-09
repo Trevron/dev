@@ -9,6 +9,7 @@
 }
 
 /* General Styles */
+
 html {
     background: #000d1a;
 }
@@ -67,17 +68,6 @@ a:hover,
     animation: fadeIn 1s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .hero h1 {
     font-size: 7rem;
     line-height: 7rem;
@@ -88,15 +78,6 @@ a:hover,
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: gradientShift 5s infinite alternate;
-}
-
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
 }
 
 .hero p {
@@ -234,6 +215,7 @@ footer {
 }
 
 /* FONTS */
+
 .londrina-sketch-regular {
     font-family: "Londrina Sketch", serif;
     font-weight: 400;
@@ -260,4 +242,84 @@ footer {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+
+/* Shapes */
+
+.shape {
+    position: absolute;
+    background: #ff00a822;
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out,
+        colorShift 10s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 5%;
+    animation-duration: 8s;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    top: 35%;
+    left: 75%;
+    animation-duration: 12s;
+}
+
+.shape-3 {
+    width: 100px;
+    height: 100px;
+    top: 80%;
+    left: 20%;
+    animation-duration: 10s;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes colorShift {
+    0% {
+        background: rgba(0, 255, 204, 0.1);
+    }
+    50% {
+        background: #ff00a822;
+    }
+    100% {
+        background: rgba(0, 255, 204, 0.1);
+    }
 }
