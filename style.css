@@ -12,6 +12,8 @@
 
 html {
     background: #000d1a;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 body {
