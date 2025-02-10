@@ -24,8 +24,6 @@ body {
     background: var(--background-gradient);
     color: var(--text-light);
     min-height: 100vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 header {
@@ -255,6 +253,7 @@ footer {
     border-radius: 50%;
     animation: float 10s infinite ease-in-out,
         colorShift 10s infinite ease-in-out;
+    overflow: hidden;
 }
 
 .shape-1 {
