@@ -24,6 +24,8 @@ body {
     background: var(--background-gradient);
     color: var(--text-light);
     min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
 }
 
 header {
@@ -200,8 +202,12 @@ footer {
         font-size: 1.125rem;
     }
 
+    .about h2 {
+        font-size: 2rem;
+    }
+
     p {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
     .project-item {
