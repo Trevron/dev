@@ -260,6 +260,7 @@ footer {
     animation: float 10s infinite ease-in-out,
         colorShift 10s infinite ease-in-out;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .shape-1 {
