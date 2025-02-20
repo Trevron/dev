@@ -39,6 +39,11 @@ ul,
 .hero ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
 header nav ul li {
@@ -61,6 +66,16 @@ a:hover,
     color: var(--accent-pink);
 }
 
+.icon-link {
+    width: 32px;
+    filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(4439%) hue-rotate(161deg) brightness(100%) contrast(103%);
+    transition: filter 0.3s ease;
+  }
+  
+.icon-link:hover {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(3515%) hue-rotate(312deg) brightness(116%) contrast(117%);
+}
+
 .hero,
 .about,
 .projects,
@@ -69,6 +84,10 @@ a:hover,
     padding: 2rem 2rem;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
+}
+
+.about {
+    padding-top: 0;
 }
 
 .hero h1 {
@@ -97,6 +116,10 @@ a:hover,
     font-family: "Smooch Sans";
 }
 
+.about h2 {
+    margin-top: 0;
+}
+
 p {
     font-family: "Smooch Sans";
     font-weight: 400;
@@ -112,12 +135,22 @@ p {
 
 .project-item {
     background: var(--card-background);
-    padding: 1.5rem;
+    padding: 1rem;
     margin: 1rem;
     width: 30%;
     box-shadow: 0 0 15px var(--shadow-color);
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero .project-item {
+    margin-top: 1.25rem;
+    max-width: 150px;
+    cursor: pointer;
+    h3 {
+        margin-top: 0;
+        font-size: 1.125rem;
+    }
 }
 
 .project-item:hover {
@@ -185,6 +218,10 @@ footer {
     margin-top: 2rem;
     backdrop-filter: blur(10px);
     padding-bottom: auto;
+}
+
+.album {
+    max-width: 100%;
 }
 
 @media (max-width: 768px) {
