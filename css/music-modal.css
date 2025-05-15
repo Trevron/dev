@@ -1,0 +1,190 @@
+/* Music Modal */
+/* Music button style */
+.music-button {
+    padding: 10px 20px;
+    background: var(--accent-pink); /* SoundCloud orange */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: "Smooch Sans";
+  }
+
+  .music-button:hover {
+    background: var(--accent-aqua)
+  }
+  
+  /* Modal styles */
+  .music-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    font-family: "Smooch Sans";
+  }
+  
+  .modal-content {
+    background-color: var(--card-background);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    height: 100%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    h2 {
+        font-size: 32px;
+        margin-bottom: 0;
+    }
+    color: var(--accent-aqua)
+  }
+  
+  .close-modal {
+    color: var(--accent-aqua);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close-modal:hover {
+    color: var(--accent-pink);
+  }
+  
+  /* Song player styles - SoundCloud-like */
+  .song-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: var(--background-dark);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .song-info {
+    position: relative;
+    flex: 1;
+    margin-right: 15px;
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+    overflow: visible;
+  }
+
+  
+  .song-title {
+    color: white;
+    font-weight: bold;
+    width: max-content;
+    position: absolute;
+    font-size: 20px;
+  }
+
+  .song-image-container {
+    top: 0;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 0;
+    overflow: hidden;
+    .song-image {
+        width: 100%
+    }
+  }
+  
+  .song-player-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    padding-right: 10px;
+    position: relative;
+  }
+
+  .song-player {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .song-actions {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  .progress-container {
+    flex: 1;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: var(--accent-pink);
+    border-radius: 2px;
+    width: 0%;
+  }
+  
+  .play-button {
+    width: 30px;
+    height: 30px;
+    background: var(--accent-pink);
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  .play-button:hover {
+    background-color: var(--accent-aqua);
+  }
+  
+  .time-display {
+    font-size: 12px;
+    color: white; 
+    min-width: 40px;
+    text-align: center;
+  }
+
+  .playlist-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.loop-button, .next-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loop-button:hover, .next-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}

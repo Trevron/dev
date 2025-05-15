@@ -80,15 +80,21 @@ a:hover,
 .about,
 .projects,
 .contact,
-.socials {
+.socials,
+.music {
     padding: 2rem 2rem;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
 
-.about {
+.about, .music {
     padding-top: 0;
 }
+
+.about {
+    margin-bottom: 4rem;
+}
+
 
 .hero h1 {
     font-size: 7rem;
@@ -218,6 +224,9 @@ footer {
     margin-top: 2rem;
     backdrop-filter: blur(10px);
     padding-bottom: auto;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 .album {
