@@ -19,14 +19,16 @@ export function createSongPlayer(song) {
       </div>
       <div class="song-player-container">
         <div class="song-title">${song.title}</div>
+        
         <div class="song-player">
-          <button class="play-button" data-id="${song.id}">▶</button>
+          <button class="play-button control-button" data-id="${song.id}">
+            <img src="./icons/play.svg" class="control-icon" data-id="${song.id}"/>
+          </button>
           <div class="progress-container" data-id="${song.id}">
             <div class="progress-bar" data-id="${song.id}"></div>
           </div>
-          <div class="time-display" data-id="${song.id}">0:00 / ${formatTime(
-        song.duration
-    )}</div>
+          <div class="time-display" data-id="${song.id}">0:00 / ${formatTime(song.duration)}
+          </div>
         </div>
         <div class="song-actions">
             <a class="download-button" href="${
@@ -51,8 +53,17 @@ function getDownloadFilename(song) {
 // Update play button state
 export function updatePlayButton(songId, isPlaying) {
     const button = document.querySelector(`.play-button[data-id="${songId}"]`);
-    if (button) {
-        button.textContent = isPlaying ? "❚❚" : "▶";
+    const icon = button?.querySelector(`.control-icon`);
+    if (button && icon) {
+        if (isPlaying) {
+            icon.src = "./icons/pause.svg";
+            icon.alt = "Pause song";
+            button.title = "Pause song";
+        } else {
+            icon.src = "./icons/play.svg";
+            icon.alt = "Play song";
+            button.title = "Play song";
+        }
     }
 }
 
@@ -83,4 +94,14 @@ export function loadSongs(songs) {
     songs.forEach((song) => {
         songList.appendChild(createSongPlayer(song));
     });
+}
+
+export function showPlayControls() {
+    const controller = document.getElementById('musicController');
+    controller.classList.remove('hidden');
+}
+
+export function updateNowPlayingTitle(song) {
+    const nowPlaying = document.getElementById('nowPlayingTitle');
+    nowPlaying.textContent = song;
 }

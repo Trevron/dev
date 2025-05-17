@@ -14,7 +14,7 @@ const musicModal = document.getElementById("musicModal");
 const closeModal = document.querySelector(".close-modal");
 const songList = document.getElementById("songList");
 const loopButton = document.querySelector(".loop-button");
-const nextButton = document.querySelector(".next-button");
+const nextButton = document.querySelector(".skip-forward-button");
 
 // Initialize modal
 musicButton.addEventListener("click", () => {
@@ -31,11 +31,12 @@ window.addEventListener("click", (e) => {
 
 function closeMusicModal() {
     musicModal.style.display = "none";
-    stopAudio();
+    // stopAudio();
 }
 
 songList.addEventListener("click", (e) => {
-    if (e.target.classList.contains("play-button")) {
+    const button = e.target.closest('.play-button');
+    if (button) {
         const songId = parseInt(e.target.dataset.id);
         togglePlay(songId, songs);
     }
@@ -51,8 +52,16 @@ songList.addEventListener("click", (e) => {
 
 loopButton.addEventListener("click", (e) => {
     const looping = toggleLoop();
-    e.target.textContent = looping ? "🔁" : "↩️";
-    e.target.title = looping ? "Looping enabled" : "Looping disabled";
+    const icon = e.currentTarget.querySelector(".control-icon");
+    if (looping) {
+        icon.src = "./icons/repeat.svg";
+        icon.alt = "Looping enabled";
+        e.currentTarget.title = "Looping enabled";
+    } else {
+        icon.src = "./icons/corner-up-right.svg";
+        icon.alt = "Looping disabled";
+        e.currentTarget.title = "Looping disabled";
+    }
 });
 
 nextButton.addEventListener("click", () => playNext());

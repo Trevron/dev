@@ -115,22 +115,35 @@
                         target="_blank"
                         >CC BY 4.0</a
                     >
-                    <div id="playControls"></div>
                     <div class="song-list" id="songList">
                         <!-- Songs will be added here dynamically -->
                     </div>
-                    <footer>
-                        <div class="playlist-controls">
-                            <button class="loop-button" title="Toggle loop">
-                                ↩️
-                            </button>
-                            <button class="next-button" title="Next song">
-                                ⏭️
-                            </button>
-                        </div>
-                    </footer>
                 </div>
             </div>
+        </section>
+
+        <section id="musicController" class="music-controller hidden">
+            <div class="play-controls">
+                <button class="loop-button control-button" title="Toggle loop">
+                    <img src="./icons/repeat.svg" class="control-icon loop-icon" />
+                </button>
+                <button class="skip-back-button control-button" title="Skip back">
+                    <img src="./icons/skip-back.svg" class="control-icon" />
+                </button>
+                <button class="play-button control-button" title="Toggle play">
+                    <img src="./icons/play.svg" class="control-icon" />
+                </button>
+                <button
+                    class="skip-forward-button control-button"
+                    title="Skip forward"
+                >
+                    <img src="./icons/skip-forward.svg" class="control-icon" />
+                </button>
+                <button class="volume-button control-button">
+                    <img src="./icons/volume.svg" class="control-icon" title="Adjust volume"/>
+                </button>
+            </div>
+            <button id="nowPlayingTitle" class="now-playing-title">Song title here</button>
         </section>
 
         <section id="about" class="about">

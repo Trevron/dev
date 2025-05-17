@@ -1,10 +1,11 @@
-import { updatePlayButton, updateProgress } from "./ui.js";
+import { showPlayControls, updateNowPlayingTitle, updatePlayButton, updateProgress } from "./ui.js";
 
 let currentAudio = null;
 let currentPlayingId = null;
 let currentPlaylist = [];
 let currentTrackIndex = -1;
-let isLooping = false;
+let isLooping = true;
+let volumeLevel = 0.5; 
 let isShuffled = false;
 
 export function togglePlay(songId, songs, isLoop) {
@@ -27,9 +28,12 @@ export function togglePlay(songId, songs, isLoop) {
         // Play new song
         currentAudio = new Audio(song.audioUrl);
         currentAudio.loop = isLooping;
+        currentAudio.volume = volumeLevel;
         currentAudio.play();
         currentPlayingId = songId;
         updatePlayButton(songId, true);
+        updateNowPlayingTitle(Object.values(songs).find(s => s.id === songId).title);
+        showPlayControls();
 
         currentAudio.addEventListener("timeupdate", () => {
             updateProgress(songId, currentAudio.currentTime, song.duration);
@@ -39,11 +43,7 @@ export function togglePlay(songId, songs, isLoop) {
             updatePlayButton(songId, false);
             updateProgress(songId, 0, song.duration);
 
-            if (isLooping) {
-                // Replay the same track if looping
-                //   togglePlay(songId, currentPlaylist, true);
-            } else {
-                // Play next track in playlist
+            if (!isLooping) {
                 playNext();
             }
         });
