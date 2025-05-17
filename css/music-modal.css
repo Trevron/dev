@@ -168,7 +168,9 @@
     width: 300px;
     height: 100px;
     bottom: 0;
-    background: var(--card-background);
+    left: 50%; 
+    transform: translateX(-50%);
+    background: var(--card-background-dark);
     z-index: 9999;
     border-top-right-radius: 100px;
     border-top-left-radius: 100px;
@@ -178,9 +180,10 @@
     gap: 10px;
     align-items: center;
     transition: bottom 0.5s ease-in-out;
-
+    box-shadow: 0 0 15px var(--shadow-color);
     &.hidden {
         bottom: -100px;
+        box-shadow: none;
     }
 }
 
@@ -191,6 +194,7 @@
     color: white;
     cursor: pointer;
     transition: color 0.1s ease;
+    background-color: var(--card-background);
     &:hover {
         color: var(--accent-aqua);
     }
