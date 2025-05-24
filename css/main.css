@@ -5,7 +5,7 @@
     --accent-aqua: #00b7ff;
     --accent-pink: #ff00a8;
     --card-background: rgba(0, 0, 0, 0.5);
-    --card-background-dark: rgba(0, 0, 0, 0.7);
+    --card-background-dark: rgba(0, 0, 0, 0.9);
     --shadow-color: rgba(0, 255, 204, 0.2);
 }
 
@@ -69,12 +69,14 @@ a:hover,
 
 .icon-link {
     width: 32px;
-    filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(4439%) hue-rotate(161deg) brightness(100%) contrast(103%);
+    filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(4439%)
+        hue-rotate(161deg) brightness(100%) contrast(103%);
     transition: filter 0.3s ease;
-  }
-  
+}
+
 .icon-link:hover {
-    filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(3515%) hue-rotate(312deg) brightness(116%) contrast(117%);
+    filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(3515%)
+        hue-rotate(312deg) brightness(116%) contrast(117%);
 }
 
 .hero,
@@ -88,14 +90,14 @@ a:hover,
     animation: fadeIn 1s ease-in-out;
 }
 
-.about, .music {
+.about,
+.music {
     padding-top: 0;
 }
 
 .about {
     margin-bottom: 4rem;
 }
-
 
 .hero h1 {
     font-size: 7rem;

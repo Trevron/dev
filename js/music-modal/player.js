@@ -1,16 +1,22 @@
-import { showPlayControls, updateNowPlayingTitle, updatePlayButton, updateProgress } from "./ui.js";
+import {
+    showPlayControls,
+    updateNowPlayingTitle,
+    updatePlayButton,
+    updateProgress,
+} from "./ui.js";
 
 let currentAudio = null;
 let currentPlayingId = null;
 let currentPlaylist = [];
 let currentTrackIndex = -1;
 let isLooping = true;
-let volumeLevel = 0.5; 
+let volumeLevel = localStorage.getItem("volume") ?? 0.5;
 let isShuffled = false;
 
 export function togglePlay(songId, songs, isLoop) {
     const song = songs.find((s) => s.id === songId);
     if (!song) return;
+    currentTrackIndex = currentPlaylist.findIndex((s) => s.id === songId);
 
     if (currentPlayingId === songId && currentAudio && !isLoop) {
         // Pause current song
@@ -32,7 +38,9 @@ export function togglePlay(songId, songs, isLoop) {
         currentAudio.play();
         currentPlayingId = songId;
         updatePlayButton(songId, true);
-        updateNowPlayingTitle(Object.values(songs).find(s => s.id === songId).title);
+        updateNowPlayingTitle(
+            Object.values(songs).find((s) => s.id === songId).title
+        );
         showPlayControls();
 
         currentAudio.addEventListener("timeupdate", () => {
@@ -86,15 +94,33 @@ export function toggleLoop() {
 
 export function playNext() {
     if (currentPlaylist.length === 0) return;
-
     const nextIndex = (currentTrackIndex + 1) % currentPlaylist.length;
     playTrack(nextIndex);
 }
 
-export function playTrack(index) {
-    if (index < 0 || index >= currentPlaylist.length) return;
+export function playPrevious() {
+    if (currentPlaylist.length === 0) return;
+    const prevIndex =
+        currentTrackIndex - 1 < 0
+            ? currentPlaylist.length - 1
+            : currentTrackIndex - 1;
+    playTrack(prevIndex);
+}
 
+export function playTrack(index) {
+    if (index === null) {
+        index = currentTrackIndex;
+    }
+    if (index < 0 || index >= currentPlaylist.length) return;
     currentTrackIndex = index;
     const song = currentPlaylist[index];
     togglePlay(song.id, currentPlaylist);
+}
+
+export function updateVolume(volume) {
+    volumeLevel = volume < 0 ? 0 : volume > 1 ? 1 : volume;
+    if (currentAudio) {
+        currentAudio.volume = volumeLevel;
+    }
+    localStorage.setItem("volume", volumeLevel);
 }

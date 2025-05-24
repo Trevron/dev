@@ -7,6 +7,9 @@ import {
     toggleLoop,
     playNext,
     setPlaylist,
+    playPrevious,
+    playTrack,
+    updateVolume,
 } from "./player.js";
 
 const musicButton = document.getElementById("musicButton");
@@ -15,12 +18,23 @@ const closeModal = document.querySelector(".close-modal");
 const songList = document.getElementById("songList");
 const loopButton = document.querySelector(".loop-button");
 const nextButton = document.querySelector(".skip-forward-button");
+const prevButton = document.querySelector(".skip-back-button");
+const controlPlayButton = document.querySelector(".control-play-button");
+const volumeButton = document.querySelector(".volume-button");
+const volumeContainer = document.querySelector(".volume-slider-container");
+const volumeSlider = document.querySelector(".volume-slider");
+const nowPlayingTitle = document.getElementById("nowPlayingTitle");
+let firstOpen = true;
 
 // Initialize modal
 musicButton.addEventListener("click", () => {
     musicModal.style.display = "block";
-    loadSongs(songs, songList);
-    setPlaylist(songs);
+    if (firstOpen) {
+        firstOpen = false;
+        loadSongs(songs, songList);
+        setPlaylist(songs);
+        volumeSlider.value = localStorage.getItem("volume") ?? 0.5;
+    }
 });
 
 // Close modal handlers
@@ -31,11 +45,10 @@ window.addEventListener("click", (e) => {
 
 function closeMusicModal() {
     musicModal.style.display = "none";
-    // stopAudio();
 }
 
 songList.addEventListener("click", (e) => {
-    const button = e.target.closest('.play-button');
+    const button = e.target.closest(".play-button");
     if (button) {
         const songId = parseInt(e.target.dataset.id);
         togglePlay(songId, songs);
@@ -65,3 +78,22 @@ loopButton.addEventListener("click", (e) => {
 });
 
 nextButton.addEventListener("click", () => playNext());
+prevButton.addEventListener("click", () => playPrevious());
+controlPlayButton.addEventListener("click", () => playTrack(null));
+volumeButton.addEventListener("click", () =>
+    volumeContainer.classList.add("visible")
+);
+nowPlayingTitle.addEventListener(
+    "click",
+    () => (musicModal.style.display = "block")
+);
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".volume-control")) {
+        volumeContainer.classList.remove("visible");
+    }
+});
+
+volumeSlider.addEventListener("input", (e) => {
+    const volume = parseFloat(e.target.value);
+    updateVolume(volume);
+});

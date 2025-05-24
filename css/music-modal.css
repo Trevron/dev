@@ -39,8 +39,16 @@
     h2 {
         font-size: 32px;
         margin-bottom: 0;
+        margin-top: 0;
     }
     color: var(--accent-aqua);
+    .modal-description {
+        color: white;
+        /* font-weight: 600; */
+        &:last-of-type {
+            margin-bottom: 1rem;
+        }
+    }
 }
 
 .close-modal {
@@ -64,6 +72,9 @@
     background: var(--background-dark);
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    &:last-of-type {
+        margin-bottom: 30px;
+    }
 }
 
 .song-info {
@@ -164,11 +175,11 @@
 
 /* Play controls */
 .music-controller {
-    position:fixed;
+    position: fixed;
     width: 300px;
     height: 100px;
     bottom: 0;
-    left: 50%; 
+    left: 50%;
     transform: translateX(-50%);
     background: var(--card-background-dark);
     z-index: 9999;
@@ -189,7 +200,7 @@
 
 .now-playing-title {
     background: none;
-    width:fit-content;
+    width: fit-content;
     border: none;
     color: white;
     cursor: pointer;
@@ -223,7 +234,7 @@
     justify-content: center;
     background: var(--accent-aqua);
     transition: background-color 0.1s ease;
-    
+
     &:hover {
         background-color: var(--accent-pink);
     }
@@ -238,4 +249,61 @@
     filter: brightness(100%) saturate(0%) invert(100%) contrast(103%);
     width: 15px;
     height: 15px;
+}
+
+/* Volume styling */
+.volume-slider-container {
+    position: absolute;
+    bottom: 80px;
+    left: 78%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background: var(--card-background-dark);
+    box-shadow: 0 0 15px var(--shadow-color);
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    &.visible {
+        opacity: 1;
+    }
+}
+
+.volume-control:hover .volume-slider-container,
+.volume-control:focus-within .volume-slider-container {
+    display: block;
+}
+
+/* Custom vertical slider styling */
+.volume-slider {
+    -webkit-appearance: slider-vertical;
+    width: 8px;
+    height: 100px;
+    padding: 0 5px;
+    background-color: var(--accent-aqua);
+}
+
+/* For Firefox */
+.volume-slider {
+    writing-mode: bt-lr;
+}
+
+/* Custom slider thumb */
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
 }
