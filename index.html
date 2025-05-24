@@ -4,29 +4,37 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Trevron</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/music-modal.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Londrina+Sketch&family=Patrick+Hand&family=Smooch+Sans:wght@100..900&display=swap"
             rel="stylesheet"
         />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
     </head>
     <body>
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
-        <!-- <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#socials">Socials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header> -->
 
         <section id="home" class="hero">
             <h1 class="londrina-sketch-regular">Trevron</h1>
@@ -92,15 +100,89 @@
             </ul>
         </section>
 
-        <!-- <section id="socials" class="socials">
-    <h2>Socials</h2>
-    <ul>
-        <li><a href="https://twitch.tv/trevron" target="_blank" rel="noreferrer">Twitch</a></li>
-        <li><a href="https://open.spotify.com/artist/3mzAHTUeYxQawdoNXFCiJg" target="_blank" rel="noreferrer">Spotify</a></li>
-        <li><a href="https://youtube.com/@yotrev" target="_blank" rel="noreferrer">Youtube</a></li>
-        <li><a href="https://bsky.app/profile/trevron.bsky.social" target="_blank" rel="noreferrer">Bluesky</a></li>
-    </ul>
-  </section> -->
+        <section id="music" class="music">
+            <button type="button" id="musicButton" class="music-button">
+                Open Music Directory
+            </button>
+
+            <div id="musicModal" class="music-modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>Music Freebies</h2>
+                    <a
+                        href="https://creativecommons.org/licenses/by/4.0/"
+                        target="_blank"
+                        >CC BY 4.0</a
+                    >
+                    <p class="modal-description">
+                        DMCA free music for games, streams, videos, etc.
+                    </p>
+                    <p class="modal-description">
+                        The song player may be used to loop tracks or play
+                        everything. Ideal for background stream music.
+                    </p>
+                    <div class="song-list" id="songList">
+                        <!-- Songs will be added here dynamically -->
+                    </div>
+                    <p style="padding-bottom: 50px">
+                        Much more music, SFX, browsing, filtering, and playlist
+                        support coming soon.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="musicController" class="music-controller hidden">
+            <div class="play-controls">
+                <button class="loop-button control-button" title="Toggle loop">
+                    <img
+                        src="./icons/repeat.svg"
+                        class="control-icon loop-icon"
+                    />
+                </button>
+                <button
+                    class="skip-back-button control-button"
+                    title="Skip back"
+                >
+                    <img src="./icons/skip-back.svg" class="control-icon" />
+                </button>
+                <button
+                    class="control-play-button control-button"
+                    title="Toggle play"
+                >
+                    <img src="./icons/play.svg" class="control-icon" />
+                </button>
+                <button
+                    class="skip-forward-button control-button"
+                    title="Skip forward"
+                >
+                    <img src="./icons/skip-forward.svg" class="control-icon" />
+                </button>
+                <div class="volume-control">
+                    <button class="volume-button control-button">
+                        <img
+                            src="./icons/volume.svg"
+                            class="control-icon"
+                            title="Adjust volume"
+                        />
+                    </button>
+                    <div class="volume-slider-container">
+                        <input
+                            type="range"
+                            class="volume-slider"
+                            min="0"
+                            max="1"
+                            step="0.01"
+                            value="0.5"
+                            orient="vertical"
+                        />
+                    </div>
+                </div>
+            </div>
+            <button id="nowPlayingTitle" class="now-playing-title">
+                Song title here
+            </button>
+        </section>
 
         <section id="about" class="about">
             <h2>About Me</h2>
@@ -139,25 +221,11 @@
     </div>
   </section> -->
 
-        <!-- <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
-      
-      <button type="submit">Send</button>
-    </form>
-  </section> -->
         <footer>
             <p>&copy; 2025 Trevron. All rights reserved.</p>
         </footer>
 
-        <script src="script.js"></script>
+        <script src="js/main.js"></script>
+        <script type="module" src="js/music-modal/index.js"></script>
     </body>
 </html>
