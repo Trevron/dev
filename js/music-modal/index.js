@@ -28,7 +28,7 @@ let firstOpen = true;
 
 // Initialize modal
 musicButton.addEventListener("click", () => {
-    musicModal.style.display = "block";
+    openMusicModal();
     if (firstOpen) {
         firstOpen = false;
         loadSongs(songs, songList);
@@ -43,8 +43,12 @@ window.addEventListener("click", (e) => {
     if (e.target === musicModal) closeMusicModal();
 });
 
+function openMusicModal() {
+    musicModal.classList.add("visible");
+}
+
 function closeMusicModal() {
-    musicModal.style.display = "none";
+    musicModal.classList.remove("visible");
 }
 
 songList.addEventListener("click", (e) => {
@@ -83,10 +87,7 @@ controlPlayButton.addEventListener("click", () => playTrack(null));
 volumeButton.addEventListener("click", () =>
     volumeContainer.classList.add("visible")
 );
-nowPlayingTitle.addEventListener(
-    "click",
-    () => (musicModal.style.display = "block")
-);
+nowPlayingTitle.addEventListener("click", () => openMusicModal());
 document.addEventListener("click", (e) => {
     if (!e.target.closest(".volume-control")) {
         volumeContainer.classList.remove("visible");

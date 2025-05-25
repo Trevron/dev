@@ -7,6 +7,7 @@
     cursor: pointer;
     font-size: 24px;
     font-family: "Smooch Sans";
+    transition: background-color 0.3s ease;
 }
 
 .music-button:hover {
@@ -24,6 +25,9 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     font-family: "Smooch Sans";
+    &.visible {
+        display: block;
+    }
 }
 
 .modal-content {
@@ -44,10 +48,6 @@
     color: var(--accent-aqua);
     .modal-description {
         color: white;
-        /* font-weight: 600; */
-        &:last-of-type {
-            margin-bottom: 1rem;
-        }
     }
 }
 
@@ -133,7 +133,7 @@
 
 .progress-container {
     flex: 1;
-    height: 4px;
+    height: 8px;
     background: #e0e0e0;
     border-radius: 2px;
     margin: 0 10px;
