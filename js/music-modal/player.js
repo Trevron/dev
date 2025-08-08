@@ -61,12 +61,12 @@ export function togglePlay(songId, songs, isLoop) {
 export function handleProgressClick(songId, e, songs) {
     if (currentPlayingId !== songId || !currentAudio) return;
 
-    const progressContainer = e.currentTarget;
-    const rect = progressContainer.getBoundingClientRect();
+    const container = e.currentTarget.querySelector(".progress-container");
+    const rect = container.getBoundingClientRect();
     const clickPosition = e.clientX - rect.left;
     const containerWidth = rect.width;
     const seekPercentage = clickPosition / containerWidth;
-
+    
     currentAudio.currentTime = seekPercentage * currentAudio.duration;
 }
 
@@ -124,3 +124,4 @@ export function updateVolume(volume) {
     }
     localStorage.setItem("volume", volumeLevel);
 }
+

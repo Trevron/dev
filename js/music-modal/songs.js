@@ -34,7 +34,7 @@ export const songs = [
     {
         id: 5,
         title: "Pit Stop",
-        duration: 124,
+        duration: 67,
         audioUrl: "songs/PitStop.ogg",
         imageUrl: "images/album-covers/EvilBean.webp",
         isLoop: true,
