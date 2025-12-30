@@ -1,231 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Trevron</title>
-        <link rel="stylesheet" href="css/main.css" />
-        <link rel="stylesheet" href="css/music-modal.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Londrina+Sketch&family=Patrick+Hand&family=Smooch+Sans:wght@100..900&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-    </head>
-    <body>
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trevron</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/music-modal.css" />
+    <link rel="stylesheet" href="css/release-modal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Londrina+Sketch&family=Patrick+Hand&family=Smooch+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
 
-        <section id="home" class="hero">
-            <h1 class="londrina-sketch-regular">Trevron</h1>
-            <p class="amatic-sc-regular">
-                frontend dev - wannabe gamedev - music maker
-            </p>
-            <div class="project-list">
-                <a
-                    class="project-item"
-                    href="https://distrokid.com/hyperfollow/trevron/block-shop-official-game-soundtrack"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <h3>New release!</h3>
-                    <img class="album" src="/images/blockshop.png" />
-                </a>
-            </div>
-            <ul>
-                <li>
-                    <a
-                        href="https://twitch.tv/trevron"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img src="./icons/twitch.svg" class="icon-link" />
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https:/trevron.bandcamp.com"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img src="./icons/bandcamp.png" class="icon-link" />
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://youtube.com/@yotrev"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img src="./icons/youtube.png" class="icon-link" />
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://bsky.app/profile/trevron.bsky.social"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <img src="./icons/bluesky.svg" class="icon-link"
-                    /></a>
-                </li>
-                <li>
-                    <a
-                        href="https://cara.app/trevron"
-                        target="_blank"
-                        rel="noreferrer"
-                        ><img src="./icons/cara.svg" class="icon-link"
-                    /></a>
-                </li>
-            </ul>
-        </section>
-
-        <section id="music" class="music">
-            <button type="button" id="musicButton" class="music-button">
-                Music Freebies
-            </button>
-
-            <div id="musicModal" class="music-modal">
-                <div class="modal-content">
-                    <span class="close-modal">&times;</span>
-                    <h2>Music Freebies</h2>
-                    <a
-                        href="https://creativecommons.org/licenses/by/4.0/"
-                        target="_blank"
-                        >CC BY 4.0</a
-                    >
-                    <p class="modal-description">
-                        DMCA free music for games, streams, videos, etc.
-                    </p>
-                    <p class="modal-description" style="margin-bottom: 1rem">
-                        The song player may be used to loop tracks or play
-                        everything. Ideal for background stream music.
-                    </p>
-                    <div class="song-list" id="songList">
-                        <!-- Songs will be added here dynamically -->
-                    </div>
-                    <p style="padding-bottom: 50px">
-                        Much more music, SFX, browsing, filtering, and playlist
-                        support coming soon.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="musicController" class="music-controller hidden">
-            <div class="play-controls">
-                <button class="loop-button control-button" title="Toggle loop">
-                    <img
-                        src="./icons/repeat.svg"
-                        class="control-icon loop-icon"
-                    />
-                </button>
-                <button
-                    class="skip-back-button control-button"
-                    title="Skip back"
-                >
-                    <img src="./icons/skip-back.svg" class="control-icon" />
-                </button>
-                <button
-                    class="control-play-button control-button"
-                    title="Toggle play"
-                >
-                    <img src="./icons/play.svg" class="control-icon" />
-                </button>
-                <button
-                    class="skip-forward-button control-button"
-                    title="Skip forward"
-                >
-                    <img src="./icons/skip-forward.svg" class="control-icon" />
-                </button>
-                <div class="volume-control">
-                    <button class="volume-button control-button">
-                        <img
-                            src="./icons/volume.svg"
-                            class="control-icon"
-                            title="Adjust volume"
-                        />
-                    </button>
-                    <div class="volume-slider-container">
-                        <input
-                            type="range"
-                            class="volume-slider"
-                            min="0"
-                            max="1"
-                            step="0.01"
-                            value="0.5"
-                            orient="vertical"
-                        />
-                    </div>
-                </div>
-            </div>
-            <button id="nowPlayingTitle" class="now-playing-title">
-                Song title here
-            </button>
-        </section>
-
-        <section id="about" class="about">
-            <h2>About Me</h2>
-            <p>I'm just a creative nerd that likes to laugh at my own jokes.</p>
-            <p>
-                I am a frontend developer but in my free time I make art, music,
-                and games.
-            </p>
-            <p>
-                You can catch me streaming on
-                <a
-                    href="https://twitch.tv/trevron"
-                    target="_blank"
-                    rel="noreferrer"
-                    >Twitch</a
-                >
-                every weekend (sometimes weekdays).
-            </p>
-            <p>
-                If you would like me to work on music for your game, contact me
-                on Twitch or Bluesky.
-            </p>
-        </section>
-
-        <!-- <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project-item">
-        <h3>Project 1</h3>
-        <p>Description of Project 1.</p>
+    <section id="home" class="hero">
+      <h1 class="londrina-sketch-regular">Trevron</h1>
+      <p class="amatic-sc-regular">
+        frontend dev - wannabe gamedev - music maker
+      </p>
+      <div class="project-list">
+        <a class="project-item" id="blockshopAlbumLink">
+          <h3>New release!</h3>
+          <img class="album" src="/images/blockshop.png" />
+        </a>
       </div>
-      <div class="project-item">
-        <h3>Project 2</h3>
-        <p>Description of Project 2.</p>
+      <div id="releaseModal" class="release-modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Block Shop (Official Game Soundtrack)</h2>
+          <a
+            class="text"
+            href="https://distrokid.com/hyperfollow/trevron/block-shop-official-game-soundtrack"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Click here for more links!
+          </a>
+          <iframe
+            style="border: 0; width: 100%; height: 100%"
+            src="https://bandcamp.com/EmbeddedPlayer/album=3816339469/size=large/bgcol=333333/linkcol=0f91ff/tracklist=true/artwork=none/transparent=true/"
+            seamless
+            ><a
+              href="https://trevron.bandcamp.com/album/block-shop-official-game-soundtrack"
+              >Block Shop by Trevron</a
+            ></iframe
+          >
+        </div>
       </div>
-    </div>
-  </section> -->
+      <ul>
+        <li>
+          <a href="https://twitch.tv/trevron" target="_blank" rel="noreferrer">
+            <img src="./icons/twitch.svg" class="icon-link" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https:/trevron.bandcamp.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="./icons/bandcamp.png" class="icon-link" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://youtube.com/@yotrev"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="./icons/youtube.png" class="icon-link" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://bsky.app/profile/trevron.bsky.social"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="./icons/bluesky.svg" class="icon-link"
+          /></a>
+        </li>
+        <li>
+          <a href="https://cara.app/trevron" target="_blank" rel="noreferrer"
+            ><img src="./icons/cara.svg" class="icon-link"
+          /></a>
+        </li>
+      </ul>
+    </section>
 
-        <footer>
-            <p>&copy; 2025 Trevron. All rights reserved.</p>
-        </footer>
+    <section id="music" class="music">
+      <button type="button" id="musicButton" class="music-button">
+        Music Freebies
+      </button>
 
-        <script src="js/main.js"></script>
-        <script type="module" src="js/music-modal/index.js"></script>
-    </body>
+      <div id="musicModal" class="music-modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Music Freebies</h2>
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+            >CC BY 4.0</a
+          >
+          <p class="modal-description">
+            DMCA free music for games, streams, videos, etc.
+          </p>
+          <p class="modal-description" style="margin-bottom: 1rem">
+            The song player may be used to loop tracks or play everything. Ideal
+            for background stream music.
+          </p>
+          <div class="song-list" id="songList">
+            <!-- Songs will be added here dynamically -->
+          </div>
+          <p style="padding-bottom: 50px">
+            Much more music, SFX, browsing, filtering, and playlist support
+            coming soon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="musicController" class="music-controller hidden">
+      <div class="play-controls">
+        <button class="loop-button control-button" title="Toggle loop">
+          <img src="./icons/repeat.svg" class="control-icon loop-icon" />
+        </button>
+        <button class="skip-back-button control-button" title="Skip back">
+          <img src="./icons/skip-back.svg" class="control-icon" />
+        </button>
+        <button class="control-play-button control-button" title="Toggle play">
+          <img src="./icons/play.svg" class="control-icon" />
+        </button>
+        <button class="skip-forward-button control-button" title="Skip forward">
+          <img src="./icons/skip-forward.svg" class="control-icon" />
+        </button>
+        <div class="volume-control">
+          <button class="volume-button control-button">
+            <img
+              src="./icons/volume.svg"
+              class="control-icon"
+              title="Adjust volume"
+            />
+          </button>
+          <div class="volume-slider-container">
+            <input
+              type="range"
+              class="volume-slider"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.5"
+              orient="vertical"
+            />
+          </div>
+        </div>
+      </div>
+      <button id="nowPlayingTitle" class="now-playing-title">
+        Song title here
+      </button>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>I'm just a creative nerd that likes to laugh at my own jokes.</p>
+      <p>
+        I am a frontend developer but in my free time I make art, music, and
+        games.
+      </p>
+      <p>
+        You can catch me streaming on
+        <a href="https://twitch.tv/trevron" target="_blank" rel="noreferrer"
+          >Twitch</a
+        >
+        every weekend (sometimes weekdays).
+      </p>
+      <p>
+        If you would like me to work on music for your game, contact me on
+        Twitch or Bluesky.
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Trevron. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script type="module" src="js/music-modal/index.js"></script>
+    <script type="module" src="js/release-modal/index.js"></script>
+  </body>
 </html>
