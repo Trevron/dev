@@ -14,7 +14,7 @@ import {
 
 const musicButton = document.getElementById("musicButton");
 const musicModal = document.getElementById("musicModal");
-const closeModal = document.querySelector(".close-modal");
+const closeModal = musicModal.querySelector(".close-modal");
 const songList = document.getElementById("songList");
 const loopButton = document.querySelector(".loop-button");
 const nextButton = document.querySelector(".skip-forward-button");

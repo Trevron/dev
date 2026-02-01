@@ -6,7 +6,7 @@ const hyperslicePlayer = document.getElementById("hyperslicePlayer");
 const steamHyperslice = document.getElementById("steamHyperslice");
 
 const releaseModal = document.getElementById("releaseModal");
-const closeModal = document.querySelector(".close-modal");
+const closeModal = releaseModal.querySelector(".close-modal");
 const releaseTitle = document.getElementById("releaseTitle");
 const releaseLinks = document.getElementById("releaseLinks");
 
