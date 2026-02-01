@@ -1,7 +1,9 @@
 const blockshopButton = document.getElementById("blockshopAlbumLink");
 const blockshopPlayer = document.getElementById("blockshopPlayer");
+const steamBlockshop = document.getElementById("steamBlockshop");
 const hypersliceButton = document.getElementById("hypersliceAlbumLink");
 const hyperslicePlayer = document.getElementById("hyperslicePlayer");
+const steamHyperslice = document.getElementById("steamHyperslice");
 
 const releaseModal = document.getElementById("releaseModal");
 const closeModal = document.querySelector(".close-modal");
@@ -28,6 +30,8 @@ blockshopButton.addEventListener("click", () => {
   releaseLinks.href = blockshopDetails.hyperfollow;
   blockshopPlayer.style.display = "block";
   hyperslicePlayer.style.display = "none";
+  steamBlockshop.style.display = "block";
+  steamHyperslice.style.display = "none";
   openMusicModal();
 });
 
@@ -37,6 +41,8 @@ hypersliceButton.addEventListener("click", () => {
   releaseLinks.href = hypersliceDetails.hyperfollow;
   blockshopPlayer.style.display = "none";
   hyperslicePlayer.style.display = "block";
+  steamBlockshop.style.display = "none";
+  steamHyperslice.style.display = "block";
   openMusicModal();
 });
 
