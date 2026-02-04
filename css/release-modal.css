@@ -71,13 +71,14 @@
     overflow: hidden;
     display:block;
     }
-    #steam-widget iframe,
-    #steam-widget object,
-    #steam-widget embed {
+    #steamWidget iframe,
+    #steamWidget object,
+    #steamWidget embed {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
+
 }
