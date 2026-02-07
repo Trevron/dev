@@ -49,8 +49,8 @@
 
 .carousel-card .coming-soon-tag {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: -24px;
+  right: -18px;
   background: var(--accent-pink);
   color: white;
   font-family: "Smooch Sans";
