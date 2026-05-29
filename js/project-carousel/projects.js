@@ -40,7 +40,7 @@ export const projects = [
     title: 'Lexispell',
     subtitle: 'Official Game Soundtrack',
     image: '/images/lexispell.png',
-    comingSoon: true,
+    comingSoon: false,
     bandcamp: null,
     hyperfollow: null,
     steamWidget: 'https://store.steampowered.com/widget/4053960/'

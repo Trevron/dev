@@ -14,7 +14,7 @@ const bandcampPlayer = document.getElementById('bandcampPlayer');
 const steamWidget = document.getElementById('steamWidget');
 const comingSoonBadge = document.getElementById('comingSoonBadge');
 
-let currentIndex = 1;
+let currentIndex = 3;
 let isAnimating = false;
 let touchStartX = 0;
 let touchEndX = 0;
