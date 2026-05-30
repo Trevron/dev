@@ -38,7 +38,7 @@ export const projects = [
   {
     id: 'lexispell',
     title: 'Lexispell',
-    subtitle: 'Official Game Soundtrack',
+    subtitle: 'Soundtrack coming soon',
     image: '/images/lexispell.png',
     comingSoon: false,
     bandcamp: null,
